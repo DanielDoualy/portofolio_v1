@@ -73,8 +73,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Python', level: 'intermediate' },
       { name: 'Pandas', level: 'intermediate' },
       { name: 'NumPy', level: 'intermediate' },
-      { name: { fr: 'Analyse de données', en: 'Data Analysis' }, level: 'intermediate' },
-      { name: { fr: 'Bases du Machine Learning', en: 'Machine Learning fundamentals' }, level: 'intermediate' },
+      { name: { fr: 'Analyse de données', en: 'Data Analysis' }, level: 'learning' },
+      { name: { fr: 'Bases du Machine Learning', en: 'Machine Learning fundamentals' }, level: 'learning' },
     ],
   },
 ];
