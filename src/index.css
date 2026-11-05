@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens (RGB channels, consumed by tailwind.config.js). Light is the
+   base; `.dark` on <html> (the default) overrides it. */
+@layer base {
+  :root {
+    --bg: 248 248 251;
+    --surface: 255 255 255;
+    --elevated: 241 242 247;
+    --line: 223 225 234;
+    --fg: 17 19 28;
+    --muted: 74 79 99;
+    --subtle: 110 115 136;
+    --accent: 98 79 230;
+    --accent2: 37 99 235;
+    --success: 5 132 92;
+    --warn: 176 104 0;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: 10 12 18;
+    --surface: 16 19 28;
+    --elevated: 22 26 38;
+    --line: 36 41 58;
+    --fg: 236 238 245;
+    --muted: 163 169 190;
+    --subtle: 122 129 153;
+    --accent: 151 135 255;
+    --accent2: 96 146 255;
+    --success: 70 205 150;
+    --warn: 240 180 80;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface/70 backdrop-blur-sm;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease,
+      background-color 0.35s ease;
+  }
+
+  .card-hover:hover {
+    @apply border-accent/40;
+    transform: translateY(-3px);
+    box-shadow: 0 18px 50px -24px rgb(var(--accent) / 0.45);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-medium;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+      box-shadow 0.2s ease, color 0.2s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-primary {
+    @apply btn bg-fg text-bg hover:bg-fg/90;
+    box-shadow: 0 10px 30px -12px rgb(var(--accent) / 0.6);
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-surface/60 text-fg hover:border-accent/50 hover:bg-elevated;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-surface/60 text-muted hover:border-accent/50 hover:text-fg;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-lg border border-line bg-elevated/70 px-2.5 py-1 font-mono text-xs text-muted;
+  }
+
+  .text-gradient {
+    background: linear-gradient(110deg, rgb(var(--accent)), rgb(var(--accent2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(rgb(var(--line) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.5) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+  }
+
+  /* Scroll reveal: elements start hidden only once JS marks them. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

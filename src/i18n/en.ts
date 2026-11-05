@@ -1,0 +1,160 @@
+import type { Dictionary } from './fr';
+
+const en: Dictionary = {
+  meta: {
+    title: 'Daniel DOUALY — Software Engineering Student & Developer',
+    description:
+      'Portfolio of Daniel DOUALY, MIAGE undergraduate at Université Félix Houphouët-Boigny (Abidjan): full-stack development, software engineering and artificial intelligence.',
+  },
+  nav: {
+    home: 'Home',
+    about: 'About',
+    skills: 'Skills',
+    projects: 'Projects',
+    experience: 'Experience',
+    education: 'Education',
+    languages: 'Languages',
+    vision: 'Vision',
+    contact: 'Contact',
+    cv: 'Resume',
+    downloadCv: 'Download my resume',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    switchLang: 'Passer en français',
+    themeToDark: 'Switch to dark theme',
+    themeToLight: 'Switch to light theme',
+    skipToContent: 'Skip to content',
+  },
+  hero: {
+    status: 'Third-year MIAGE student · Open to internships',
+    greeting: 'Hi, I’m',
+    role: 'Software Engineering Student & Developer.',
+    intro: 'Building software, exploring intelligent technologies and turning ideas into meaningful solutions.',
+    ctaProjects: 'Explore My Projects',
+    ctaContact: 'Get In Touch',
+    scroll: 'Scroll',
+  },
+  about: {
+    eyebrow: 'About',
+    title: 'Understand systems, then build them.',
+    paragraphs: [
+      'I’m Daniel DOUALY, a Computer Science student at Université Félix Houphouët-Boigny in Abidjan, enrolled in the MIAGE bachelor’s program. What drives me is understanding how software systems work — and learning to design ones that are reliable, useful and well thought out.',
+      'Through coursework, personal projects and hackathons, I’ve steadily built up my programming skills, analytical thinking and problem-solving. I enjoy exploring new technologies, going back to computer science fundamentals and challenging myself with hands-on projects that push me to see things through.',
+      'My long-term goal: to become a highly skilled Software Engineer specializing in Artificial Intelligence, able to design and build intelligent, scalable and genuinely impactful software.',
+    ],
+    facts: {
+      location: 'Location',
+      locationValue: 'Abidjan, Côte d’Ivoire',
+      studies: 'Education',
+      studiesValue: 'MIAGE Bachelor — UFHB (3rd year)',
+      focus: 'Focus',
+      focusValue: 'Software Engineering · Full-stack · AI',
+    },
+    interestsTitle: 'What I’m into',
+    interests: [
+      'Software Engineering',
+      'Full-Stack Development',
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Backend Architecture',
+      'Data Engineering',
+      'Software Design',
+    ],
+  },
+  skills: {
+    eyebrow: 'Skills',
+    title: 'A toolkit that keeps growing.',
+    subtitle:
+      'Honest proficiency labels: what I already use in projects, what I’m familiar with, and what I’m currently learning.',
+    levels: {
+      intermediate: 'Intermediate',
+      familiar: 'Familiar',
+      learning: 'Currently learning',
+    },
+    legend: 'Legend',
+  },
+  projects: {
+    eyebrow: 'Projects',
+    title: 'Ideas turned into code.',
+    subtitle:
+      'Projects focused on education and students. Implemented features and planned ones are clearly separated.',
+    objective: 'Objective',
+    implemented: 'Implemented',
+    planned: 'Planned',
+    tech: 'Tech stack',
+    code: 'Source code',
+    demo: 'Live demo',
+    demoSoon: 'Demo coming soon',
+    status: {
+      live: 'Live',
+      'in-progress': 'In development',
+    },
+  },
+  experience: {
+    eyebrow: 'Experiences & Achievements',
+    title: 'Learning by taking on challenges.',
+    subtitle: 'Hackathons taught me to collaborate, decide fast and deliver under constraints.',
+  },
+  education: {
+    eyebrow: 'Education & Certifications',
+    title: 'An academic path, extended by self-learning.',
+    current: 'Current',
+    university: 'Université Félix Houphouët-Boigny (UFHB)',
+    degree: 'Bachelor’s degree in MIAGE (Licence)',
+    level: 'Current level: third year (L3)',
+    field: 'Methods of Computer Science Applied to Business Management',
+    fieldDescription:
+      'A program that combines computer science (programming, databases, software engineering, networking) with an understanding of how organizations operate.',
+    location: 'Abidjan, Côte d’Ivoire',
+    certificationsTitle: 'Certifications',
+    verify: 'Verify',
+  },
+  languages: {
+    eyebrow: 'Languages',
+    title: 'Communicating in French and English.',
+    scale: 'CEFR scale',
+    native: 'Everyday working language',
+  },
+  vision: {
+    eyebrow: 'Beyond the Code',
+    title: 'My Vision',
+    intro:
+      'My ambitions go beyond building websites. I want to understand and design complete systems — from architecture and data to the intelligence that makes them useful.',
+    quote:
+      'I aspire to build software that goes beyond functionality — software that solves meaningful problems, creates opportunities and makes a difference.',
+    areas: [
+      { title: 'Software architecture', text: 'Designing clear, maintainable and well-structured systems.' },
+      { title: 'Scalable backends', text: 'Building APIs and services that can grow with their usage.' },
+      { title: 'AI & Machine Learning', text: 'Going deeper into models and learning to ship them in real products.' },
+      { title: 'Automation', text: 'Creating intelligent applications that save people time.' },
+      { title: 'Data-driven solutions', text: 'Using data to inform better decisions.' },
+      { title: 'Real-world impact', text: 'Putting technology to work on concrete problems, at home and beyond.' },
+    ],
+    now: 'Today',
+    nowText: 'Strengthening my foundations in full-stack development, databases and software engineering.',
+    next: 'Tomorrow',
+    nextText: 'Specializing in Artificial Intelligence and contributing to high-impact projects.',
+  },
+  contact: {
+    eyebrow: 'Contact',
+    title: 'Let’s build something together.',
+    subtitle: 'Internship, collaboration, student project or just a chat about tech — my inbox is open.',
+    email: 'Email',
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    location: 'Location',
+    sendEmail: 'Send me an email',
+    downloadCv: 'Download my resume',
+    copy: 'Copy',
+    copied: 'Copied!',
+  },
+  footer: {
+    built: 'Designed and built by Daniel DOUALY with React, TypeScript and Tailwind CSS.',
+    backToTop: 'Back to top',
+  },
+  common: {
+    external: '(opens in a new tab)',
+  },
+};
+
+export default en;

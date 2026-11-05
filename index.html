@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel DOUALY — Software Engineering Student &amp; Developer</title>
+    <meta
+      name="description"
+      content="Portfolio de Daniel DOUALY, étudiant en Licence MIAGE à l'Université Félix Houphouët-Boigny (Abidjan) : développement full-stack, génie logiciel et intelligence artificielle."
+    />
+    <meta name="author" content="Daniel DOUALY" />
+    <meta name="theme-color" content="#0a0c12" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Daniel DOUALY — Software Engineering Student & Developer" />
+    <meta
+      property="og:description"
+      content="Building software, exploring intelligent technologies and turning ideas into meaningful solutions."
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply the saved theme and language before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('dd-theme');
+          if (theme === 'light') document.documentElement.classList.remove('dark');
+          var lang = localStorage.getItem('dd-lang');
+          if (lang === 'en' || lang === 'fr') document.documentElement.lang = lang;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>Ce site nécessite JavaScript. / This site requires JavaScript.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
