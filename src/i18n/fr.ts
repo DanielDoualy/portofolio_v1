@@ -32,6 +32,8 @@ const fr = {
     ctaProjects: 'Découvrir mes projets',
     ctaContact: 'Me contacter',
     scroll: 'Défiler',
+    portraitAlt: 'Portrait de Daniel DOUALY, en costume bleu et lunettes',
+    badge: 'Vainqueur · Hackathon 25 ans MIAGE',
   },
   about: {
     eyebrow: 'À propos',

@@ -1,50 +1,71 @@
-import { ArrowDown, ArrowRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowDown, ArrowRight, Github, Linkedin, Mail, MapPin, Trophy } from 'lucide-react';
 import { profile } from '../data/profile';
 import { useLanguage } from '../hooks/useLanguage';
+import portrait from '../assets/daniel.jpg';
 
-function CodeWindow() {
+/** Compact code snippet that overlaps the portrait. */
+function CodeCard() {
   const { lang } = useLanguage();
   const fr = lang === 'fr';
   const k = 'text-accent';
   const s = 'text-success';
   const p = 'text-accent2';
-  const c = 'text-subtle';
 
   return (
-    <div className="relative animate-float motion-reduce:animate-none">
-      <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-accent/25 via-accent2/10 to-transparent blur-2xl" aria-hidden="true" />
-      <div className="card relative overflow-hidden shadow-2xl shadow-black/20">
-        <div className="flex items-center justify-between border-b border-line px-4 py-3">
-          <div className="flex gap-1.5" aria-hidden="true">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]/80" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]/80" />
-          </div>
-          <span className="font-mono text-[11px] text-subtle">daniel.ts</span>
-          <span className="w-10" aria-hidden="true" />
+    <div className="card overflow-hidden bg-surface/90 shadow-2xl shadow-black/30 backdrop-blur-md">
+      <div className="flex items-center gap-3 border-b border-line px-3.5 py-2.5">
+        <div className="flex gap-1.5" aria-hidden="true">
+          <span className="h-2 w-2 rounded-full bg-[#ff5f57]/80" />
+          <span className="h-2 w-2 rounded-full bg-[#febc2e]/80" />
+          <span className="h-2 w-2 rounded-full bg-[#28c840]/80" />
         </div>
-        <pre className="overflow-x-auto p-5 font-mono text-[12.5px] leading-6 text-fg sm:text-[13px]" aria-label={fr ? 'Carte de profil sous forme de code' : 'Profile card as code'}>
-          <code>
-            <span className={c}>{fr ? '// en construction, en continu' : '// always a work in progress'}</span>
-            {'\n'}
-            <span className={k}>const</span> daniel <span className={c}>=</span> {'{'}
-            {'\n  '}
-            <span className={p}>role</span>: <span className={s}>"{fr ? 'Étudiant en génie logiciel' : 'Software Engineering Student'}"</span>,
-            {'\n  '}
-            <span className={p}>school</span>: <span className={s}>"UFHB · MIAGE L3"</span>,
-            {'\n  '}
-            <span className={p}>building</span>: [<span className={s}>"full-stack apps"</span>, <span className={s}>"APIs"</span>],
-            {'\n  '}
-            <span className={p}>learning</span>: [<span className={s}>"AI"</span>, <span className={s}>"ML"</span>, <span className={s}>"data"</span>],
-            {'\n  '}
-            <span className={p}>hackathons</span>: <span className={k}>2</span>,
-            {'\n'}
-            {'};'}
-            {'\n\n'}
-            daniel.<span className={p}>next</span>(<span className={s}>"{fr ? 'résoudre de vrais problèmes' : 'solve real problems'}"</span>)
-            <span className="ml-0.5 inline-block h-4 w-2 translate-y-0.5 animate-blink bg-accent motion-reduce:animate-none" aria-hidden="true" />
-          </code>
-        </pre>
+        <span className="font-mono text-[10px] text-subtle">daniel.ts</span>
+      </div>
+      <pre className="p-3.5 font-mono text-[11px] leading-5 text-fg sm:text-xs sm:leading-6" aria-label={fr ? 'Profil sous forme de code' : 'Profile as code'}>
+        <code>
+          <span className={k}>const</span> daniel = {'{'}
+          {'\n  '}
+          <span className={p}>school</span>: <span className={s}>"UFHB · MIAGE L3"</span>,
+          {'\n  '}
+          <span className={p}>learning</span>: [<span className={s}>"AI"</span>, <span className={s}>"ML"</span>],
+          {'\n'}
+          {'};'}
+          {'\n'}
+          daniel.<span className={p}>next</span>(<span className={s}>"impact"</span>)
+          <span className="ml-0.5 inline-block h-3.5 w-1.5 translate-y-0.5 animate-blink bg-accent motion-reduce:animate-none" aria-hidden="true" />
+        </code>
+      </pre>
+    </div>
+  );
+}
+
+function Portrait() {
+  const { t } = useLanguage();
+
+  return (
+    <div className="relative mx-auto w-full max-w-[22rem] pb-10 pl-4 sm:max-w-sm sm:pl-10 lg:max-w-[25rem]">
+      <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-accent/30 via-accent2/15 to-transparent blur-3xl" aria-hidden="true" />
+
+      <figure className="relative overflow-hidden rounded-[1.75rem] border border-line bg-elevated shadow-2xl shadow-black/30">
+        <img
+          src={portrait}
+          alt={t.hero.portraitAlt}
+          width={733}
+          height={1080}
+          decoding="async"
+          className="aspect-[4/5] w-full object-cover object-top"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-white/10" aria-hidden="true" />
+      </figure>
+
+      <p className="absolute right-3 top-4 flex items-center gap-2 rounded-full border border-line bg-surface/85 px-3 py-1.5 text-xs font-medium text-fg shadow-lg backdrop-blur-md sm:-right-4">
+        <Trophy size={14} className="text-warn" aria-hidden="true" />
+        {t.hero.badge}
+      </p>
+
+      <div className="absolute bottom-0 left-0 w-[15.5rem] animate-float motion-reduce:animate-none sm:w-[17rem]">
+        <CodeCard />
       </div>
     </div>
   );
@@ -106,8 +127,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="reveal is-visible mx-auto w-full min-w-0 max-w-lg lg:max-w-none">
-          <CodeWindow />
+        <div className="reveal is-visible min-w-0">
+          <Portrait />
         </div>
       </div>
 
