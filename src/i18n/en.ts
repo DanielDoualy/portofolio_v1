@@ -34,7 +34,6 @@ const en: Dictionary = {
     ctaContact: 'Get In Touch',
     scroll: 'Scroll',
     portraitAlt: 'Portrait of Daniel DOUALY, wearing a blue suit and glasses',
-    badge: 'Winner · MIAGE 25th Hackathon',
   },
   about: {
     eyebrow: 'About',
